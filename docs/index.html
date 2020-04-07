@@ -23,6 +23,17 @@
   <script src="https://harishsune.github.io/sampleapp/polyfills-es5.292bb6772a5896e18097.js" nomodule defer>
   </script><script src="https://harishsune.github.io/sampleapp/polyfills-es2015.bbb42ff2e1c488ff52d5.js" type="module"></script>
   <script src="https://harishsune.github.io/sampleapp/main-es2015.1b8fbad5bfdf627dc145.js" type="module"></script>
-  <script src="https://harishsune.github.io/sampleapp/main-es5.1b8fbad5bfdf627dc145.js" nomodule defer></script></body>
+  <script src="https://harishsune.github.io/sampleapp/main-es5.1b8fbad5bfdf627dc145.js" nomodule defer></script>
+  <script>
+  // See http://www.backalleycoder.com/2016/05/13/sghpa-the-single-page-app-hack-for-github-pages/
+  (function(){
+    var redirect = sessionStorage.redirect;
+    delete sessionStorage.redirect;
+    if (redirect && redirect != location.href) {
+      history.replaceState(null, null, redirect);
+    }
+  })();
+</script>
+  </body>
 
 </html>
