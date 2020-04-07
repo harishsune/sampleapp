@@ -20,5 +20,17 @@
 <body>
   <app-root></app-root>
 <script src="sampleapp/runtime-es2015.c9afb3256f2870e161de.js" type="module"></script><script src="sampleapp/runtime-es5.c9afb3256f2870e161de.js" nomodule defer></script><script src="sampleapp/polyfills-es5.292bb6772a5896e18097.js" nomodule defer></script><script src="sampleapp/polyfills-es2015.bbb42ff2e1c488ff52d5.js" type="module"></script><script src="sampleapp/main-es2015.1b8fbad5bfdf627dc145.js" type="module"></script><script src="sampleapp/main-es5.1b8fbad5bfdf627dc145.js" nomodule defer></script></body>
-
+  <script>
+    (function () {
+      // Retrieve the URL the user was trying to access when receiving the 404.
+      var redirect = sessionStorage.redirect;
+      // Remove the URL from sessionStorage.
+      delete sessionStorage.redirect;
+      // Check if we actually need to redirect.
+      if (redirect && redirect != location.href) {
+        // We need to redirect to the URL the user was trying to access.
+        history.replaceState(null, null, redirect);
+      }
+    })();
+  </script>
 </html>
