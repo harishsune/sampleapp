@@ -15,7 +15,15 @@
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
-<link rel="stylesheet" href="sampleapp/styles.d4140804f0966e96e8d1.css"></head>
+<link rel="stylesheet" href="sampleapp/styles.d4140804f0966e96e8d1.css">
+  <script>
+    // Store the URL the user was trying to access when receiving the 404.
+    sessionStorage.redirect = location.href;
+  </script>
+
+  <!-- Immediately redirect to the base URL so we can use the SPA routing. -->
+  <meta http-equiv="refresh" content="0;URL='/'"></meta>
+  </head>
 
 <body>
   <app-root></app-root>
